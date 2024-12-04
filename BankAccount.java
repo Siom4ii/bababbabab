@@ -23,6 +23,18 @@ public class BankAccount {
 
             System.out.println("Deposit amount must be positive.");
         }
+    }public void widthraw (double WidthrawAmount){
+
+        if (WidthrawAmount > 0){
+
+            balance -= WidthrawAmount;
+
+            System.out.println(accountHolderName + " Widthraw " + WidthrawAmount + ".\nNew balance: " + balance);
+
+        }else{
+
+            System.out.println("Your Widthrawal Amount is Greater than your Balance.");
+        }
     }
     public void checkBalance (){
 
@@ -35,9 +47,11 @@ public class BankAccount {
     public static void main(String[] args) {
 
         BankAccount account1 = new BankAccount("\nKc", 1000);
-        BankAccount account2 = new BankAccount("\nBaba", 2000);
+        BankAccount account2 = new BankAccount("\nKevin", 2000);
 
         account1.deposit(200);
+        account2.widthraw(200);
+        account1.checkBalance();
         account2.checkBalance();
 
         System.out.println("\nTotal bank accounts: " + BankAccount.getTotalAccounts());
